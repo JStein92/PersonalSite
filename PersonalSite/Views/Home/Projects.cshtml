@@ -1,0 +1,18 @@
+﻿@model IEnumerable<PersonalSite.Models.Project>
+
+@{
+    ViewData["Title"] = "Projects";
+}
+
+<h2>All Projects</h2>
+<hr />
+<ol>
+    @foreach (var message in Model)
+    {
+        <li>
+            <ul>
+                <li>To: @Html.DisplayFor(modelItem => message.full_name)</li>
+            </ul>
+        </li>
+    }
+</ol>
