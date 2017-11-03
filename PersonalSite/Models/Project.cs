@@ -11,11 +11,11 @@ namespace PersonalSite.Models
     public class Project
     {
         public string full_name { get; set; }
-        public string Url { get; set; }
-        public string Description { get; set; }
-        public string Stars { get; set; }
-        public string Language { get; set; }
-        public DateTime LastUpdated {get;set;}
+        public string html_url { get; set; }
+        public string description { get; set; }
+        public string stargazers_count { get; set; }
+        public string language { get; set; }
+        public DateTime updated_at {get;set;}
 
         public static List<Project> GetProjects()
         {
@@ -29,8 +29,9 @@ namespace PersonalSite.Models
                 response = await GetResponseContentAsync(client, request) as RestResponse;
             }).Wait();
             JArray jsonResponse = JsonConvert.DeserializeObject<JArray>(response.Content);
-            var messageList = JsonConvert.DeserializeObject<List<Project>>(jsonResponse.ToString());
-            return messageList;
+            
+            var projectList = JsonConvert.DeserializeObject<List<Project>>(jsonResponse.ToString());
+            return projectList;
         }
 
         public static Task<IRestResponse> GetResponseContentAsync(RestClient theClient, RestRequest theRequest)

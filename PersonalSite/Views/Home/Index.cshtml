@@ -1,4 +1,20 @@
 ﻿@{
     ViewData["Title"] = "Home Page";
 }
-<h1>Jonathan Stein</h1>
+<div class=" splash">
+
+    <h1 class="splash-text">Jonathan Stein</h1>
+  <br />
+    <p class="splash-text-sub">Junior Web Developer</p>
+    <br />
+    <div class="row sub-header">
+
+        <div class="col-md-4"></div>
+        <div class="col-md-2">@Html.ActionLink("About", "About", "Home",null, new { @style = "color:white" })</div>
+        <div class="col-md-2">@Html.ActionLink("Projects", "Projects", "Home", null, new { @style = "color:white" })</div>
+        <div class="col-md-4"></div>
+
+    </div>
+</div>
+
+

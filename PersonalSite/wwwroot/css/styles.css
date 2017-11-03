@@ -1,0 +1,48 @@
+﻿.card-body{
+  padding:10px;
+}
+.card-header{
+    font-size:1.5em;
+}
+.card{
+    margin:10px;
+}
+body, html {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+.splash {
+    background-image: url("../images/splash.jpg");
+    background-size: cover;
+    background-position: top;
+    height:100%;
+
+ 
+}
+.splash-text{
+    font-size:11vw;
+    text-align:center;
+    color:whitesmoke;
+    text-shadow: 10px 10px 10px black;
+}
+.splash-text-sub {
+    font-size: 5vw;
+    text-align: center;
+    color: whitesmoke;
+    text-shadow: 5px 5px 5px black;
+}
+.sub-header {
+    font-size: 2vw;
+    text-align: center;
+    color: whitesmoke;
+    text-shadow: 2px 2px 2px black;
+}
+.about-text{
+    
+    
+}
+.about-card{
+    background-color:azure
+}

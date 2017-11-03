@@ -4,15 +4,24 @@
     ViewData["Title"] = "Projects";
 }
 
-<h2>All Projects</h2>
+<h2 class="jumbotron">Top Starred Projects</h2>
 <hr />
-<ol>
-    @foreach (var message in Model)
+<div class="container">
+    @foreach (var project in Model.OrderByDescending(x => x.stargazers_count).Take(3))
     {
-        <li>
-            <ul>
-                <li>To: @Html.DisplayFor(modelItem => message.full_name)</li>
-            </ul>
-        </li>
+        <div class="card">
+            <a class="card-header" href="@project.html_url">@project.full_name </a>
+            <div class="card-body">
+                @for (int i = 0; i < int.Parse(project.stargazers_count); i++)
+                {
+                    <i class="fa fa-star"></i>
+                }
+                <p class="card-text">@project.description</p>
+                <a href="@project.html_url" class="btn btn-primary">View</a>
+            </div>
+            <div class="card-footer text-muted">
+                Made in @project.language - Last updated @project.updated_at
+            </div>
+        </div>
     }
-</ol>
+</div>
